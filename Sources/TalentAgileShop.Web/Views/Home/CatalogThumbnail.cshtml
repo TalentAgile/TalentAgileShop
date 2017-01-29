@@ -1,0 +1,44 @@
+﻿@using TalentAgileShop.Cart
+@model List<TalentAgileShop.Model.Product>
+
+@{
+    var lines = Model.Partition(4);
+
+
+}
+
+@foreach (var line in lines)
+{
+
+
+
+    <div class="container">
+
+
+        <div class="row">
+            @foreach (var product in line)
+            {
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img src="@Url.Action("ProductImage", new {id = product.Id})" alt="@product.Name">
+                        <div class="caption">
+                            <h3>@product.Name</h3>
+                            <p>@product.Price €</p>
+                            <p><a href="@Url.Action("Product",new {id = product.Id})" class="btn btn-primary" role="button">Details...</a></p>
+                        </div>
+                    </div>
+                </div>
+            }
+           
+        </div>
+
+
+
+    </div>
+
+
+}
+
+
+
+

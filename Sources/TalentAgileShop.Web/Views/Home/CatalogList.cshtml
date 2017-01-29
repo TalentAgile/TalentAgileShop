@@ -1,0 +1,16 @@
+﻿@model List<TalentAgileShop.Model.Product> 
+    
+
+<div class="container" id="catalogList">
+    @foreach (var product in Model)
+    {
+
+        <div class="row">
+            <div class="col-md-10"><a href="@Url.Action("Product",new {id = product.Id})">@product.Name</a></div>
+            <div class="col-md-2">@product.Price €</div>
+        </div>
+
+    }
+
+</div>
+

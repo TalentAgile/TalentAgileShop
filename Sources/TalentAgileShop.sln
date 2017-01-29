@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentAgileShop.Web", "TalentAgileShop.Web\TalentAgileShop.Web.csproj", "{02D1C3D6-5CA1-42AE-8849-8224FED92490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentAgileShop.Model", "TalentAgileShop.Model\TalentAgileShop.Model.csproj", "{9F1B8292-7F98-4166-B037-1373E402B6CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentAgileShop.Data", "TalentAgileShop.Data\TalentAgileShop.Data.csproj", "{F10CE488-8CA3-456F-92A1-639022D43D2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentAgileShop.Cart", "TalentAgileShop.Cart\TalentAgileShop.Cart.csproj", "{05F0EA39-0549-4356-A9C3-74D3DA6C6FE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentAgileShop.Cart.Tests", "TalentAgileShop.Cart.Tests\TalentAgileShop.Cart.Tests.csproj", "{CDCC768D-A365-4C64-9FA0-EAA5055CDCB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{121813CE-6ACE-4899-BA4A-EBB73515011E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentAgileShop.UITests", "TalentAgileShop.UITests\TalentAgileShop.UITests.csproj", "{9C2A524C-CF1A-4B55-BDA0-03C2881C1558}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI Tests", "UI Tests", "{42C06928-4AD7-43F7-9B59-640C7F279E67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{046C653A-559B-47A6-9B4F-3ADC620F2541}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cart", "Cart", "{5F8FD3CB-0F7E-446E-A95E-1A6EA4911CC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02D1C3D6-5CA1-42AE-8849-8224FED92490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D1C3D6-5CA1-42AE-8849-8224FED92490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D1C3D6-5CA1-42AE-8849-8224FED92490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D1C3D6-5CA1-42AE-8849-8224FED92490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F1B8292-7F98-4166-B037-1373E402B6CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F1B8292-7F98-4166-B037-1373E402B6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F1B8292-7F98-4166-B037-1373E402B6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F1B8292-7F98-4166-B037-1373E402B6CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F10CE488-8CA3-456F-92A1-639022D43D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F10CE488-8CA3-456F-92A1-639022D43D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F10CE488-8CA3-456F-92A1-639022D43D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F10CE488-8CA3-456F-92A1-639022D43D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F0EA39-0549-4356-A9C3-74D3DA6C6FE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F0EA39-0549-4356-A9C3-74D3DA6C6FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F0EA39-0549-4356-A9C3-74D3DA6C6FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F0EA39-0549-4356-A9C3-74D3DA6C6FE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDCC768D-A365-4C64-9FA0-EAA5055CDCB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDCC768D-A365-4C64-9FA0-EAA5055CDCB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDCC768D-A365-4C64-9FA0-EAA5055CDCB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDCC768D-A365-4C64-9FA0-EAA5055CDCB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C2A524C-CF1A-4B55-BDA0-03C2881C1558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C2A524C-CF1A-4B55-BDA0-03C2881C1558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C2A524C-CF1A-4B55-BDA0-03C2881C1558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C2A524C-CF1A-4B55-BDA0-03C2881C1558}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9F1B8292-7F98-4166-B037-1373E402B6CF} = {046C653A-559B-47A6-9B4F-3ADC620F2541}
+		{F10CE488-8CA3-456F-92A1-639022D43D2D} = {046C653A-559B-47A6-9B4F-3ADC620F2541}
+		{05F0EA39-0549-4356-A9C3-74D3DA6C6FE9} = {5F8FD3CB-0F7E-446E-A95E-1A6EA4911CC5}
+		{CDCC768D-A365-4C64-9FA0-EAA5055CDCB2} = {121813CE-6ACE-4899-BA4A-EBB73515011E}
+		{9C2A524C-CF1A-4B55-BDA0-03C2881C1558} = {42C06928-4AD7-43F7-9B59-640C7F279E67}
+	EndGlobalSection
+EndGlobal

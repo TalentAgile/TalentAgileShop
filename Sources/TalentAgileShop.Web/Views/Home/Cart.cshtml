@@ -1,0 +1,118 @@
+﻿
+@model TalentAgileShop.Web.Models.CartViewModel
+@{
+    ViewBag.Title = "Your Cart";
+
+    var cartApiUrl = Request.Url.GetLeftPart(UriPartial.Authority) + "/_api/cart";
+    var total = @Model.Price.ProductCost + @Model.Price.DeliveryCost;
+}
+
+@if ((!string.IsNullOrWhiteSpace(Model.DiscountCode)) && Model.Price.InvalidDiscountCode)
+{
+    <div class="container">
+        <div class="alert alert-danger invalidDiscountCodeAlert"> '@Model.DiscountCode' is not a valid discount code
+       
+        </div>
+    </div>
+
+}
+
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Count</th>
+                <th>Add/Remove</th>
+                <th>Unit Price</th>
+            </tr>
+
+
+        </thead>
+        <tbody>
+
+
+            @foreach (var productTuple in Model.Items)
+            {
+                <tr data-productid="@productTuple.Product.Id">
+                    <td><a href="~/">@productTuple.Product.Name</a> </td>
+                    <td class="count">
+                        @productTuple.Count
+                    </td>
+                    <td>
+                        <a class="addbtn btn btn-xs btn-success">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true">
+
+                            </span>
+                        </a>
+                        <a class="removebtn btn btn-xs btn-danger">
+                            <span class="glyphicon glyphicon-minus" aria-hidden="true">
+
+                            </span>
+                        </a>
+                    </td>
+                    <td class="col-md-2 col-md-offset-2">@productTuple.Product.Price €</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-md-offset-6 col-md-4">
+            <b>Product cost:</b>
+        </div>
+        <div class="col-md-2"><b id="productCost">@Model.Price.ProductCost</b> €</div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-6 col-md-4">
+            <b>Delivery cost:</b>
+        </div>
+        <div class="col-md-2" ><b id="deliveryCost">@Model.Price.DeliveryCost</b> €</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-offset-6 col-md-4">
+            <h3>
+                <b>Total:</b>
+            </h3>
+        </div>
+        <div class="col-md-2">
+            <h3 ><b id="total">@total</b>  €</h3>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 50px;">
+    <form action="@Url.Action("Cart", "Home")" method="get" target="_blank">
+        <div class="row">
+            <div class="col-md-3"><input type="text" id="discountCode" value="@Model.DiscountCode"><br></div>
+            <div class="col-md-3"><a class="btn btn-default" id="changeCodeBtn">Change code</a></div>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-8">
+            <a class="btn btn-success btn-lg" href="~/checkout">Check out</a>
+        </div>
+    </div>
+
+</div>
+@section scripts
+{
+
+
+    <script type="text/javascript">
+
+        var cartApiUrl = "@cartApiUrl";
+        var discountCode = "@Model.DiscountCode";
+    </script>
+    <script src="~/Scripts/site/log.js">
+    </script>
+    <script src="~/Scripts/site/cart.js">
+    </script>
+
+}

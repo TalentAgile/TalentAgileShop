@@ -1,0 +1,97 @@
+﻿@using TalentAgileShop.Web.Models
+@model TalentAgileShop.Web.Models.CatalogViewModel
+@{
+    ViewBag.Title = "Catalog";
+}
+
+@if (Model.ShowCategories)
+{
+    <div class="panel panel-default" id="categories">
+        <div class="panel-body">
+
+            <div class="row">
+                @if (Model.ThumbnailViewAvailable && Model.CurrentViewType == CatalogViewModel.ViewType.Thumbnail)
+                {
+                    var link = Url.Action("Catalog", "Home", new { view = "thumbnail" });
+                    <div class="col-md-2">
+                        <a href="@link">All products</a>
+                    </div>
+                }
+                else
+                {
+                    var link = Url.Action("Catalog", "Home");
+                    <div class="col-md-2">
+                        <a href="@link">All products</a>
+                    </div>
+                }
+
+                @foreach (var category in Model.Categories)
+                {
+                    if (category == Model.CurrentCategory)
+                    {
+                        <div class="col-md-2"><b>@category</b>
+                        </div>
+
+                        continue;
+                    }
+
+                    string link;
+
+
+
+                    if (Model.ThumbnailViewAvailable && Model.CurrentViewType == CatalogViewModel.ViewType.Thumbnail)
+                    {
+                        link = Url.Action("Catalog", "Home", new {category = category, view = "thumbnail"});
+                    }
+                    else
+                    {
+                        link = Url.Action("Catalog", "Home", new {category = category});
+                    }
+                    <div class="col-md-2"><a href="@link">@category</a>
+                    </div>
+
+                }
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+}
+
+
+
+@if (Model.CurrentViewType == CatalogViewModel.ViewType.List)
+{
+
+    @Html.Partial("CatalogList", Model.Products)
+
+
+
+    if (Model.ThumbnailViewAvailable)
+    {
+        <div class="container" style="margin-top: 50px">
+            <div class="row">
+                <div>
+                    Go to <a id="goToThumbnailView" href="@Url.Action("Catalog","Home",new {view = "thumbnail"})">thumbnail View</a>
+                </div>
+            </div>
+        </div>
+    }
+
+}
+else
+{
+    @Html.Partial("CatalogThumbnail", Model.Products)
+
+    <div class="container" style="margin-top: 50px">
+        <div class="row">
+            <div>
+                Go to <a id="goToListView" href="@Url.Action("Catalog","Home")">List View</a>
+            </div>
+        </div>
+    </div>
+}
+
