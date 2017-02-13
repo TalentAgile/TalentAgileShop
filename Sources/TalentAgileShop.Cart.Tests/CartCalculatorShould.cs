@@ -7,7 +7,7 @@ using TalentAgileShop.Model;
 namespace TalentAgileShop.Cart.Tests
 {
     [TestFixture]
-    public class CartCalculatorTests
+    public class CartCalculatorShould
     {
         private CartPriceCalculator _calculator;
 
@@ -25,7 +25,7 @@ namespace TalentAgileShop.Cart.Tests
         // 1. remove the Ignore attribute and write the algorithm 
         [Test]
         [Ignore("")]
-        public void Empty_Cart_Price_Is_Zero()
+        public void return_zero_when_the_cart_is_empty()
         {
             var cartItems = new List<CartItem>();
 
@@ -44,16 +44,16 @@ namespace TalentAgileShop.Cart.Tests
         [TestCase(200, 2)]
         [TestCase(300, 3)]
         [TestCase(400, 4)]
-        public void Cart_With_N_Product_Price_Is_Sum_Of_Prices(decimal productPrice,int count)
+        public void return_total_price_given_the_product_price_and_quantity_of_articles(decimal productPrice, int quantityOfArticles, decimal totalPrice)
         {
             var cartItems = new List<CartItem>();
            
-            cartItems.AddProduct(productPrice, count);
+            cartItems.AddProduct(productPrice, quantityOfArticles);
 
 
             var price = _calculator.ComputePrice(cartItems, null);
 
-            Check.That(price.ProductCost).IsEqualTo(count * productPrice);
+            Check.That(price.ProductCost).IsEqualTo(totalPrice);
 
         }
 
@@ -67,29 +67,30 @@ namespace TalentAgileShop.Cart.Tests
         [TestCase(ProductSize.Medium, 2, 10)]
         [TestCase(ProductSize.Large, 2, 20)]
         [TestCase(ProductSize.ExtraLarge, 2, 40)]
-        public void Cart_Delivery_Price(ProductSize s,int count, decimal delivery)
+        public void return_delivery_price_given_the_product_size_and_the_quantity_of_articles(ProductSize productSize, int quantityOfArticles, decimal deliveryPrice)
         {
             var cartItems = new List<CartItem>();
-
-            cartItems.AddProduct(0, count,s);
+            var productPrice = 0;
+            cartItems.AddProduct(productPrice, quantityOfArticles, productSize);
 
             var price = _calculator.ComputePrice(cartItems, null);
 
 
-            Check.That(price.DeliveryCost).IsEqualTo(delivery);
+            Check.That(price.DeliveryCost).IsEqualTo(deliveryPrice);
         }
 
 
         // 3. remove the Ignore attribute and write the algorithm 
         [Test]
         [Ignore("")]
-        public void Max_Delivery_Price_Is_50()
+        public void return_50_when_the_product_is_extra_large()
         {
             var cartItems = new List<CartItem>();
-
-            cartItems.AddProduct(0, 5, ProductSize.ExtraLarge);
-
-            var price = _calculator.ComputePrice(cartItems, null);
+            var productPrice = 0;
+            var quantityOfArticles = 5;
+            cartItems.AddProduct(productPrice, quantityOfArticles, ProductSize.ExtraLarge);
+            string discount = null;
+            var price = _calculator.ComputePrice(cartItems, discount);
 
 
             Check.That(price.DeliveryCost).IsEqualTo(50);

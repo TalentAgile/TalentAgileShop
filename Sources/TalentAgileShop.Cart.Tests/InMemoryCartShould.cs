@@ -9,12 +9,12 @@ using NUnit.Framework;
 namespace TalentAgileShop.Cart.Tests
 {
     [TestFixture]
-    public class InMemoryCartTests
+    public class InMemoryCartShould
     {
 
         [Test]
        
-        public void Repository_Always_Returns_A_Non_Null_Cart()
+        public void return_a_not_null_cart()
         {
             var repository = new InMemoryCartRepository();
 
@@ -26,7 +26,7 @@ namespace TalentAgileShop.Cart.Tests
         }
 
         [Test]
-        public void Add_A_Product_On_A_Cart_Adds_A_ProductInfo_Item()
+        public void add_product_info_when_a_product_is_added_into_the_cart()
         {
             var repository = new InMemoryCartRepository();
 
@@ -46,7 +46,7 @@ namespace TalentAgileShop.Cart.Tests
         }
 
         [Test]
-        public void Adding_A_Product_Twice_Adds_A_ProductInfo_Item_With_Two_Items()
+        public void add_product_info_items_when_a_product_is_added_twice_into_the_cart()
         {
             var repository = new InMemoryCartRepository();
 
@@ -65,7 +65,7 @@ namespace TalentAgileShop.Cart.Tests
         }
 
         [Test]
-        public void Adding_And_Then_Removing_A_Product_Twice_Does_Nothing()
+        public void do_nothing_when_a_product_is_added_and_then_removed_twice()
         {
             var repository = new InMemoryCartRepository();
 
@@ -83,7 +83,7 @@ namespace TalentAgileShop.Cart.Tests
         }
 
         [Test]
-        public void Removing_An_Non_Added_Product_Does_Nothing()
+        public void do_nothing_when_trying_to_remove_a_non_added_product()
         {
             var repository = new InMemoryCartRepository();
 
