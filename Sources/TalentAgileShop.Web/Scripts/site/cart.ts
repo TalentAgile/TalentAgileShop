@@ -39,11 +39,11 @@ function updatePrice(price: IPrice) {
 function updateItem(cartLine: JQuery, productId: string, cart: ICart) {
     const productData = cart.Products.filter(p => p.Id === productId);
 
-    if (productData.length === 0) {
-        $(cartLine).remove();
-    } else {
+    //if (productData.length === 0) {        
+    //    $(cartLine).remove();
+    //} else {
         $(cartLine).children(".count").text(productData[0].Count);
-    }
+    //}
 }
 
 

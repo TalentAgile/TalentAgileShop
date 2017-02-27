@@ -83,7 +83,7 @@ namespace TalentAgileShop.Cart.Tests
         // 3. remove the Ignore attribute and write the algorithm 
         [Test]
         [Ignore("")]
-        public void return_50_when_the_product_is_extra_large()
+        public void return_50_as_maximun_delivery_price()
         {
             var cartItems = new List<CartItem>();
             var productPrice = 0;
