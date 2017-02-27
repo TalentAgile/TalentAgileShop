@@ -31,7 +31,11 @@ namespace TalentAgileShop.Web.Controllers
 
             if (cookie == null)
             {
+#if DEBUG
+                return "DEBUGCARTID";
+#else
                 return Guid.NewGuid().ToString();
+#endif
             }
             var value = cookie.Cookies.FirstOrDefault()?.Value;
 
