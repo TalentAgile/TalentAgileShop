@@ -11,7 +11,7 @@ namespace TalentAgileShop.Web
         public static void Initialize(FeatureSet featureSet)
         {
             featureSet.ThumbnailView = false;
-            featureSet.CatalogCategories = true; // new comment
+            featureSet.CatalogCategories = false;
 
             OverrideWithEnvVariableConfig(featureSet);
         }
