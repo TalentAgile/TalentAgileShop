@@ -134,6 +134,12 @@ namespace TalentAgileShop.Web.Controllers
             return View(new CartViewModel(products, price) { DiscountCode = discountCode});
         }
 
+        [System.Web.Mvc.Route("about")]
+        public ActionResult About()
+        {
+            throw new NotImplementedException();
+        }
+
         private Model.Cart GetBasket()
         {
             var cookie = Request.Cookies.Get("cart-id");
