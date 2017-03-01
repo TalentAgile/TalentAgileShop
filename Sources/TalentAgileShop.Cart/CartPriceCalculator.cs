@@ -19,15 +19,67 @@ namespace TalentAgileShop.Cart
         /// </returns>
         public CartPrice ComputePrice(List<CartItem> items, string discountCode)
         {
-          
-            // Write cart price algorithm here
-            return new CartPrice()
+
+            var result = new CartPrice();
+
+
+
+            result.ProductCost = 0;
+
+            result.DeliveryCost = 0;
+
+            foreach (var product in items)
             {
-                DeliveryCost = 0,
-                ProductCost = 0
-            };
+
+                if (discountCode == "5BIG" &&
+                    (product.Product.Size == ProductSize.Large || product.Product.Size == ProductSize.ExtraLarge))
+                {
+                    result.ProductCost += product.Product.Price * 0.95m * product.Count;
+                }
+                else
+                {
+                    result.ProductCost += product.Product.Price * product.Count;
+                }
+
+                switch (product.Product.Size)
+                {
+                    case ProductSize.Small:
+
+                        if (discountCode == "FREESMALL")
+                        {
+                            break;
+                        }
+                        result.DeliveryCost += 5 * product.Count;
+                        break;
+                    case ProductSize.Medium:
+                        if (discountCode == "FREESMALL")
+                        {
+                            break;
+                        }
+                        result.DeliveryCost += 5 * product.Count;
+                        break;
+                    case ProductSize.Large:
+                        result.DeliveryCost += 10 * product.Count;
+                        break;
+                    case ProductSize.ExtraLarge:
+                        result.DeliveryCost += 20 * product.Count;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+
+            result.DeliveryCost = Math.Min(50, result.DeliveryCost);
+            if (discountCode != null)
+            {
+                result.InvalidDiscountCode = discountCode != "FREESMALL" && discountCode != "5BIG";
+            }
+
+            return result;
 
         }
 
     }
+
+
 }
