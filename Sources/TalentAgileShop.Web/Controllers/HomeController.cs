@@ -43,7 +43,7 @@ namespace TalentAgileShop.Web.Controllers
             }
 
 
-            var query = _dataContext.Products.Include(p => p.Category);
+            var query = _dataContext.Products.Include(p=> p.Image).Include(p => p.Category);
             if (category != null)
             {
                 query = query.Where(p => p.Category.Name == category);
