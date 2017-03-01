@@ -1,28 +1,28 @@
- public CartPrice ComputePrice(List<Tuple<Product, int>> products, string discountCode)
+   public CartPrice ComputePrice(List<CartItem> items, string discountCode)
         {
 
             var result = new CartPrice();
 
 
 
-            result.Products = 0;
+            result.ProductCost = 0;
 
-            result.Delivery = 0;
+            result.DeliveryCost = 0;
 
-            foreach (var product in products)
+            foreach (var product in items)
             {
 
                 if (discountCode == "5BIG" &&
-                    (product.Item1.Size == ProductSize.Large || product.Item1.Size == ProductSize.ExtraLarge))
+                    (product.Product.Size == ProductSize.Large || product.Product.Size == ProductSize.ExtraLarge))
                 {
-                    result.Products += product.Item1.Price * 0.95m * product.Item2;
+                    result.ProductCost += product.Product.Price * 0.95m * product.Count;
                 }
                 else
                 {
-                    result.Products += product.Item1.Price * product.Item2;
+                    result.ProductCost += product.Product.Price * product.Count;
                 }
 
-                switch (product.Item1.Size)
+                switch (product.Product.Size)
                 {
                     case ProductSize.Small:
 
@@ -30,32 +30,34 @@
                         {
                             break;
                         }
-                        result.Delivery += 5 * product.Item2;
+                        result.DeliveryCost += 5 * product.Count;
                         break;
                     case ProductSize.Medium:
                         if (discountCode == "FREESMALL")
                         {
                             break;
                         }
-                        result.Delivery += 5 * product.Item2;
+                        result.DeliveryCost += 5 * product.Count;
                         break;
                     case ProductSize.Large:
-                        result.Delivery += 10 * product.Item2;
+                        result.DeliveryCost += 10 * product.Count;
                         break;
                     case ProductSize.ExtraLarge:
-                        result.Delivery += 20 * product.Item2;
+                        result.DeliveryCost += 20 * product.Count;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
             }
 
-            result.Delivery = Math.Min(50, result.Delivery);
+            result.DeliveryCost = Math.Min(50, result.DeliveryCost);
             if (discountCode != null)
             {
-                result.InvalidDiscountCode = discountCode != "TEST";
+                result.InvalidDiscountCode = discountCode != "FREESMALL" && discountCode != "5BIG";
             }
 
             return result;
 
         }
+
+    }
