@@ -7,11 +7,13 @@ using System.Data.Entity;
 using System.Web.Http;
 using Microsoft.ApplicationInsights;
 using TalentAgileShop.Model;
+using TalentAgileShop.Web.Infrastructure;
 using TalentAgileShop.Web.Models;
 
 namespace TalentAgileShop.Web.Controllers
 {
     [System.Web.Mvc.RoutePrefix("")]
+    [CartCookieActionFilter]
     public class HomeController : Controller
     {
         private readonly FeatureSet _featureSet;

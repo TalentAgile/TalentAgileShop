@@ -31,11 +31,7 @@ namespace TalentAgileShop.Web.Controllers
 
             if (cookie == null)
             {
-#if DEBUG
-                return "DEBUGCARTID";
-#else
                 return Guid.NewGuid().ToString();
-#endif
             }
             var value = cookie.Cookies.FirstOrDefault()?.Value;
 
@@ -106,17 +102,8 @@ namespace TalentAgileShop.Web.Controllers
         HttpStatusCode.OK,
         cart
     );
-            
-            var cookie = new CookieHeaderValue("cart-id", id);
-            
-            cookie.Expires = DateTimeOffset.Now.AddMinutes(40);
-            cookie.Domain = Request.RequestUri.Host;
-            cookie.Path = "/";
-
-            response.Headers.AddCookies(new CookieHeaderValue[] { cookie });
 
             return response;
-
 
         }
         [System.Web.Http.Route("price")]
