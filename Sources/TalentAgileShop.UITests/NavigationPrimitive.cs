@@ -29,7 +29,7 @@ namespace TalentAgileShop.UITests
         }
 
 
-        public void TakeScreenshotIfTestFailed()
+        public void TakeScreenshotIfCurrentTestFailed()
         {
             if (_context.CurrentTestOutcome != UnitTestOutcome.Failed)
             {
