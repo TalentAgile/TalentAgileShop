@@ -83,8 +83,7 @@ namespace TalentAgileShop.UITests
                 .ThenTheDeliveryCostIs(0);
         }
 
-        [TestMethod]
-        [Ignore]
+        [TestMethod]      
         public void let_me_switch_to_the_thumbnail_view_and_back_to_list_view()
         {
             GivenTheSite
