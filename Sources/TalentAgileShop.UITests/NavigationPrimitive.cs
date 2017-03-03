@@ -1,7 +1,10 @@
 using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NFluent;
 using OpenQA.Selenium;
@@ -23,6 +26,46 @@ namespace TalentAgileShop.UITests
         {
             var result = _context?.Properties[propertyName] as string;
             return result;
+        }
+
+
+        public void TakeScreenshotIfCurrentTestFailed()
+        {
+            if (_context.CurrentTestOutcome != UnitTestOutcome.Failed)
+            {
+                return;
+            }
+            try
+            {
+                string fileNameBase =
+                    $"error_{_context.TestName}_{DateTime.Now:yyyyMMdd_HHmmss}";
+
+                if (!Directory.Exists(_context.ResultsDirectory))
+                    Directory.CreateDirectory(_context.ResultsDirectory);
+
+                var pageSource = WebDriver.PageSource;
+                var sourceFilePath = Path.Combine(_context.ResultsDirectory, fileNameBase + "_source.html");
+                File.WriteAllText(sourceFilePath, pageSource, Encoding.UTF8);
+                _context.AddResultFile(sourceFilePath);
+                Console.WriteLine("Page source: {0}", new Uri(sourceFilePath));
+
+                var takesScreenshot = WebDriver as ITakesScreenshot;
+
+                if (takesScreenshot == null)
+                { return;}
+
+                var screenshot = takesScreenshot.GetScreenshot();
+
+                var screenshotFilePath = Path.Combine(_context.ResultsDirectory, fileNameBase + "_screenshot.png");
+
+                screenshot.SaveAsFile(screenshotFilePath, ScreenshotImageFormat.Png);
+                _context.AddResultFile(screenshotFilePath);
+                Console.WriteLine("Screenshot: {0}", new Uri(screenshotFilePath));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error while taking screenshot: {0}", ex);
+            }
         }
 
         private IWebDriver CreateWebDriver()
