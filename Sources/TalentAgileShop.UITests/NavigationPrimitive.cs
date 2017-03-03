@@ -29,7 +29,7 @@ namespace TalentAgileShop.UITests
         }
 
 
-        public void TakeScreenshotIfCurrentTestFailed()
+        public void TakeScreenshotIfTestFailed()
         {
             if (_context.CurrentTestOutcome != UnitTestOutcome.Failed)
             {
@@ -39,12 +39,12 @@ namespace TalentAgileShop.UITests
             {
                 string fileNameBase =
                     $"error_{_context.TestName}_{DateTime.Now:yyyyMMdd_HHmmss}";
-
-                if (!Directory.Exists(_context.ResultsDirectory))
-                    Directory.CreateDirectory(_context.ResultsDirectory);
+                var resultsDirectory = _context.TestResultsDirectory;
+                if (!Directory.Exists(resultsDirectory))
+                    Directory.CreateDirectory(resultsDirectory);
 
                 var pageSource = WebDriver.PageSource;
-                var sourceFilePath = Path.Combine(_context.ResultsDirectory, fileNameBase + "_source.html");
+                var sourceFilePath = Path.Combine(resultsDirectory, fileNameBase + "_source.html");
                 File.WriteAllText(sourceFilePath, pageSource, Encoding.UTF8);
                 _context.AddResultFile(sourceFilePath);
                 Console.WriteLine("Page source: {0}", new Uri(sourceFilePath));
@@ -56,7 +56,7 @@ namespace TalentAgileShop.UITests
 
                 var screenshot = takesScreenshot.GetScreenshot();
 
-                var screenshotFilePath = Path.Combine(_context.ResultsDirectory, fileNameBase + "_screenshot.png");
+                var screenshotFilePath = Path.Combine(resultsDirectory, fileNameBase + "_screenshot.png");
 
                 screenshot.SaveAsFile(screenshotFilePath, ScreenshotImageFormat.Png);
                 _context.AddResultFile(screenshotFilePath);
