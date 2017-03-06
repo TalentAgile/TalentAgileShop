@@ -9,25 +9,24 @@ namespace TalentAgileShop.UITests
     {
         private static NavigationPrimitives GivenTheSite { get; set; }
 
-        [ClassInitialize]
-        public static void Init(TestContext context)
-        {
-            GivenTheSite = new NavigationPrimitives(context);
-        }
+        public TestContext TestContext { get; set; }
 
         [TestInitialize]
         public void TestInit()
         {
+            GivenTheSite = new NavigationPrimitives(TestContext);
             GivenTheSite.InitializeBrowser();
         }
 
         [TestCleanup]
         public void TestCleanup()
         {
+            
             Console.WriteLine("Cleanup #####");            
             GivenTheSite.TakeScreenshotIfCurrentTestFailed();
             Console.WriteLine("Before Dispose #####");
             GivenTheSite.DisposeBrowser();
+            GivenTheSite = null;
         }
 
 
