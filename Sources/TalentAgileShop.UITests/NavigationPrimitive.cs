@@ -39,9 +39,9 @@ namespace TalentAgileShop.UITests
             {
                 string fileNameBase =
                     $"error_{_context.TestName}_{DateTime.Now:yyyyMMdd_HHmmss}";
-                var resultsDirectory = _context.TestResultsDirectory;
-                if (!Directory.Exists(resultsDirectory))
-                    Directory.CreateDirectory(resultsDirectory);
+                var resultsDirectory = Path.GetTempPath();
+                //if (!Directory.Exists(resultsDirectory))
+                //    Directory.CreateDirectory(resultsDirectory);
 
                 var pageSource = WebDriver.PageSource;
                 var sourceFilePath = Path.Combine(resultsDirectory, fileNameBase + "_source.html");
@@ -52,7 +52,9 @@ namespace TalentAgileShop.UITests
                 var takesScreenshot = WebDriver as ITakesScreenshot;
 
                 if (takesScreenshot == null)
-                { return;}
+                {
+                    return;
+                }
 
                 var screenshot = takesScreenshot.GetScreenshot();
 
@@ -104,7 +106,7 @@ namespace TalentAgileShop.UITests
         public NavigationPrimitives(TestContext context)
         {
             _context = context;
-           
+
             SiteUrl = GetTestProperty("siteUrl");
         }
 
@@ -131,7 +133,7 @@ namespace TalentAgileShop.UITests
             WebDriver = null;
         }
 
-   
+
 
         public NavigationPrimitives WhenINavigateToTheHomepage()
         {
@@ -301,7 +303,7 @@ namespace TalentAgileShop.UITests
         {
             var productCostElement = WebDriver.FindElement(By.Id("productCost"));
 
-            var cost = decimal.Parse(FormatCost(productCostElement.Text), NumberStyles.AllowDecimalPoint,CultureInfo.CurrentUICulture.NumberFormat);
+            var cost = decimal.Parse(FormatCost(productCostElement.Text), NumberStyles.AllowDecimalPoint, CultureInfo.CurrentUICulture.NumberFormat);
 
             Check.That(cost).IsEqualTo(expectedProductCost);
             return this;
