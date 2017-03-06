@@ -61,7 +61,7 @@ namespace TalentAgileShop.UITests
                 .ThenIShouldSeeThisLog(logCount: 1, log: "Added to cart!");
         }
 
-        [TestMethod]      
+        [TestMethod]
         public void show_two_logs_when_I_add_a_product_to_the_cart_twice()
         {
             GivenTheSite
@@ -71,7 +71,15 @@ namespace TalentAgileShop.UITests
                 .ThenIShouldSeeThisLog(logCount: 2, log: "Added to cart!");
         }
 
-
+        [TestMethod]
+        [Ignore]
+        public void let_me_switch_to_the_thumbnail_view_and_back_to_list_view()
+        {
+            GivenTheSite
+                .WhenINavigateToTheCatalogPage()
+                .WhenISwitchToThumbnailView()
+                .ThenICanSwitchToListView();
+        }
 
 
         [TestMethod]
@@ -84,15 +92,7 @@ namespace TalentAgileShop.UITests
                 .ThenTheDeliveryCostIs(0);
         }
 
-        [TestMethod]
-        [Ignore]
-        public void let_me_switch_to_the_thumbnail_view_and_back_to_list_view()
-        {
-            GivenTheSite
-                .WhenINavigateToTheCatalogPage()
-                .WhenISwitchToThumbnailView()
-                .ThenICanSwitchToListView();
-        }
+
 
         [TestMethod]
         [Ignore]
