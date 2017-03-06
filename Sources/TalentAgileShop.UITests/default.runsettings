@@ -3,7 +3,7 @@
   <!-- Parameters used by tests at runtime -->
   <TestRunParameters>
     <Parameter name="siteUrl" value="http://localhost:4078/" />
-    <Parameter name="webDriver" value="chrome" /> <!-- phantomJs-->
+    <Parameter name="webDriver" value="phantomJs" /> <!-- phantomJs-->
     <Parameter name="chromeDriverLocation" value="C:\tools\selenium" />
   </TestRunParameters>
 </RunSettings>

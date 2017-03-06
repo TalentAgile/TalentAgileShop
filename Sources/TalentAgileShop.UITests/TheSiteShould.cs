@@ -24,6 +24,7 @@ namespace TalentAgileShop.UITests
         [TestCleanup]
         public void TestCleanup()
         {
+            Console.WriteLine("Cleanup #####");            
             GivenTheSite.TakeScreenshotIfCurrentTestFailed();
             GivenTheSite.DisposeBrowser();
         }
