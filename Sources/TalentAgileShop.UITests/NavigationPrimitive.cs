@@ -31,11 +31,12 @@ namespace TalentAgileShop.UITests
 
         public void TakeScreenshotIfCurrentTestFailed()
         {
-            _context.WriteLine("Test outcome: {0}",_context.CurrentTestOutcome);
+            Console.WriteLine("Test outcome: {0}",_context.CurrentTestOutcome);
             if (_context.CurrentTestOutcome != UnitTestOutcome.Failed)
             {
                 return;
             }
+            Console.WriteLine("Creating screenshot");
             try
             {
                 string fileNameBase =
