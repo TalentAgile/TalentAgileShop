@@ -7,7 +7,7 @@ namespace TalentAgileShop.UITests
     [TestClass]
     public class TheSiteShould
     {
-        private static NavigationPrimitives GivenTheSite { get; set; }
+        private NavigationPrimitives GivenTheSite { get; set; }
 
         public TestContext TestContext { get; set; }
 
@@ -20,11 +20,8 @@ namespace TalentAgileShop.UITests
 
         [TestCleanup]
         public void TestCleanup()
-        {
-            
-            Console.WriteLine("Cleanup #####");            
+        {                         
             GivenTheSite.TakeScreenshotIfCurrentTestFailed();
-            Console.WriteLine("Before Dispose #####");
             GivenTheSite.DisposeBrowser();
             GivenTheSite = null;
         }

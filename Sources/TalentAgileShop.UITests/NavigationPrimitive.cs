@@ -31,12 +31,10 @@ namespace TalentAgileShop.UITests
 
         public void TakeScreenshotIfCurrentTestFailed()
         {
-            Console.WriteLine("Test {1} outcome: {0}",_context.CurrentTestOutcome,_context.TestName);
             if (_context.CurrentTestOutcome != UnitTestOutcome.Failed)
             {
                 return;
             }
-            Console.WriteLine("Creating screenshot");
             try
             {
                 string fileNameBase =
@@ -50,8 +48,7 @@ namespace TalentAgileShop.UITests
                 var sourceFilePath = Path.Combine(resultsDirectory, fileNameBase + "_source.html");
                 File.WriteAllText(sourceFilePath, pageSource, Encoding.UTF8);
                 _context.AddResultFile(sourceFilePath);
-                Console.WriteLine("Page source: {0}", new Uri(sourceFilePath));
-
+            
                 var takesScreenshot = WebDriver as ITakesScreenshot;
 
                 if (takesScreenshot == null)
@@ -65,8 +62,7 @@ namespace TalentAgileShop.UITests
 
                 screenshot.SaveAsFile(screenshotFilePath, ScreenshotImageFormat.Png);
                 _context.AddResultFile(screenshotFilePath);
-                Console.WriteLine("Screenshot: {0}", new Uri(screenshotFilePath));
-            }
+                }
             catch (Exception ex)
             {
                 Console.WriteLine("Error while taking screenshot: {0}", ex);
