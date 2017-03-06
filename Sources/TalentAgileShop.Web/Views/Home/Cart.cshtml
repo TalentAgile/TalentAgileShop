@@ -1,10 +1,18 @@
 ﻿
+@using System.Globalization
 @model TalentAgileShop.Web.Models.CartViewModel
 @{
     ViewBag.Title = "Your Cart";
 
     var cartApiUrl = Request.Url.GetLeftPart(UriPartial.Authority) + "/_api/cart";
     var total = @Model.Price.ProductCost + @Model.Price.DeliveryCost;
+}
+@functions
+{
+    static string FormatMoney(decimal n)
+    {
+        return n.ToString(CultureInfo.GetCultureInfo("en-Us").NumberFormat);
+    }
 }
 
 @if ((!string.IsNullOrWhiteSpace(Model.DiscountCode)) && Model.Price.InvalidDiscountCode)
@@ -51,7 +59,7 @@
                             </span>
                         </a>
                     </td>
-                    <td class="col-md-2 col-md-offset-2">@productTuple.Product.Price €</td>
+                    <td class="col-md-2 col-md-offset-2">@FormatMoney(productTuple.Product.Price) €</td>
                 </tr>
             }
         </tbody>
@@ -64,13 +72,13 @@
         <div class="col-md-offset-6 col-md-4">
             <b>Product cost:</b>
         </div>
-        <div class="col-md-2"><b id="productCost">@Model.Price.ProductCost</b> €</div>
+        <div class="col-md-2"><b id="productCost">@FormatMoney(Model.Price.ProductCost)</b> €</div>
     </div>
     <div class="row">
         <div class="col-md-offset-6 col-md-4">
             <b>Delivery cost:</b>
         </div>
-        <div class="col-md-2" ><b id="deliveryCost">@Model.Price.DeliveryCost</b> €</div>
+        <div class="col-md-2" ><b id="deliveryCost">@FormatMoney(@Model.Price.DeliveryCost)</b> €</div>
     </div>
 
     <div class="row">
@@ -80,7 +88,7 @@
             </h3>
         </div>
         <div class="col-md-2">
-            <h3 ><b id="total">@total</b>  €</h3>
+            <h3 ><b id="total">@FormatMoney(@total)</b>  €</h3>
         </div>
     </div>
 </div>

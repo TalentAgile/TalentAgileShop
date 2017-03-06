@@ -197,6 +197,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\CartCookieActionFilter.cs" />
     <Compile Include="Models\CartViewModel.cs" />
     <Compile Include="Models\CatalogViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />

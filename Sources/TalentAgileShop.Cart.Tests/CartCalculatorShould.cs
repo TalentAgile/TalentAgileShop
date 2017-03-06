@@ -19,7 +19,7 @@ namespace TalentAgileShop.Cart.Tests
         }
 
 
-    
+
 
 
         // 1. remove the Ignore attribute and write the algorithm 
@@ -40,14 +40,14 @@ namespace TalentAgileShop.Cart.Tests
         // 2. remove the Ignore attribute and write the algorithm 
         [Test]
         [Ignore("")]
-        [TestCase(100,1)]
-        [TestCase(200, 2)]
-        [TestCase(300, 3)]
-        [TestCase(400, 4)]
+        //[TestCase(100, 1, 100)]
+        //[TestCase(100, 2, 200)]
+        //[TestCase(100, 3, 300)]
+        //[TestCase(100, 4, 400)]
         public void return_total_price_given_the_product_price_and_quantity_of_articles(decimal productPrice, int quantityOfArticles, decimal totalPrice)
         {
             var cartItems = new List<CartItem>();
-           
+
             cartItems.AddProduct(productPrice, quantityOfArticles);
 
 
@@ -59,14 +59,14 @@ namespace TalentAgileShop.Cart.Tests
 
         [Test]
         [Ignore("")]
-        [TestCase(ProductSize.Small,1,5)]
-        [TestCase(ProductSize.Medium,1, 5)]
-        [TestCase(ProductSize.Large,1,10)]
-        [TestCase(ProductSize.ExtraLarge,1, 20)]
-        [TestCase(ProductSize.Small, 2, 10)]
-        [TestCase(ProductSize.Medium, 2, 10)]
-        [TestCase(ProductSize.Large, 2, 20)]
-        [TestCase(ProductSize.ExtraLarge, 2, 40)]
+        //[TestCase(ProductSize.Small, 1, 5)]
+        //[TestCase(ProductSize.Medium, 1, 5)]
+        //[TestCase(ProductSize.Large, 1, 10)]
+        //[TestCase(ProductSize.ExtraLarge, 1, 20)]
+        //[TestCase(ProductSize.Small, 2, 10)]
+        //[TestCase(ProductSize.Medium, 2, 10)]
+        //[TestCase(ProductSize.Large, 2, 20)]
+        //[TestCase(ProductSize.ExtraLarge, 2, 40)]
         public void return_delivery_price_given_the_product_size_and_the_quantity_of_articles(ProductSize productSize, int quantityOfArticles, decimal deliveryPrice)
         {
             var cartItems = new List<CartItem>();
@@ -101,12 +101,12 @@ namespace TalentAgileShop.Cart.Tests
         [Ignore("")]
         public void FREESMALL_Discount()
         {
-          // 
+            // 
         }
 
-      
+
         // 5. Write  test(s) for 5BIG Discount first and the write the algorithm
-        
+
 
     }
 }
