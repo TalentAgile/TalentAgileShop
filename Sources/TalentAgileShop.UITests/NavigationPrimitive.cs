@@ -31,7 +31,7 @@ namespace TalentAgileShop.UITests
 
         public void TakeScreenshotIfCurrentTestFailed()
         {
-            Console.WriteLine("Test outcome: {0}",_context.CurrentTestOutcome);
+            Console.WriteLine("Test {1} outcome: {0}",_context.CurrentTestOutcome,_context.TestName);
             if (_context.CurrentTestOutcome != UnitTestOutcome.Failed)
             {
                 return;
