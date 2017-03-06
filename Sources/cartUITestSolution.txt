@@ -1,0 +1,22 @@
+  public NavigationPrimitives ThenTheProductCostIs(decimal expectedProductCost)
+        {
+            var productCostElement = WebDriver.FindElement(By.Id("productCost"));
+
+            var cost = ParseCost(productCostElement.Text);
+
+            Check.That(cost).IsEqualTo(expectedProductCost);
+            return this;
+        }
+
+        
+
+
+        public NavigationPrimitives ThenTheDeliveryCostIs(decimal expectedDeliveryCost)
+        {
+            var productCostElement = WebDriver.FindElement(By.Id("deliveryCost"));
+
+            var cost = ParseCost(productCostElement.Text);
+
+            Check.That(cost).IsEqualTo(expectedDeliveryCost);
+            return this;
+        }
