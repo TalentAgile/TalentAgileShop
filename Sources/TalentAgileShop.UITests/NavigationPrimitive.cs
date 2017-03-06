@@ -294,29 +294,31 @@ namespace TalentAgileShop.UITests
 
         private string FormatCost(string cost)
         {
-            return cost.Replace(",", ".");
+            return cost;
+        }
+
+        /// <summary>
+        /// Parse a number from the website format to a decimal
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        private decimal ParseCost(string number)
+        {
+            return decimal.Parse(number, NumberStyles.AllowDecimalPoint, CultureInfo.GetCultureInfo("en-US").NumberFormat);
         }
 
 
         public NavigationPrimitives ThenTheProductCostIs(decimal expectedProductCost)
         {
-            var productCostElement = WebDriver.FindElement(By.Id("productCost"));
-
-            var cost = decimal.Parse(FormatCost(productCostElement.Text), NumberStyles.AllowDecimalPoint, CultureInfo.CurrentUICulture.NumberFormat);
-
-            Check.That(cost).IsEqualTo(expectedProductCost);
-            return this;
+          throw new NotImplementedException();
         }
+
+        
 
 
         public NavigationPrimitives ThenTheDeliveryCostIs(decimal expectedDeliveryCost)
         {
-            var productCostElement = WebDriver.FindElement(By.Id("deliveryCost"));
-
-            var cost = decimal.Parse(FormatCost(productCostElement.Text), NumberStyles.AllowDecimalPoint);
-
-            Check.That(cost).IsEqualTo(expectedDeliveryCost);
-            return this;
+            throw new NotImplementedException();
         }
     }
 }

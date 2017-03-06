@@ -22,6 +22,9 @@ interface ICartProduct {
 
 declare var cartApiUrl: string;
 
+function formatMoney(n: number): string {
+    return n.toLocaleString("en-US", { minimumFractionDigits: 2, useGrouping: false });
+}
 
 function updatePrice(price: IPrice) {
     if (price.InvalidDiscountCode) {
@@ -30,9 +33,9 @@ function updatePrice(price: IPrice) {
         $("#total").text("######");
     } else {
         const total = price.ProductCost + price.DeliveryCost;
-        $("#deliveryCost").text(price.DeliveryCost);
-        $("#productCost").text(price.ProductCost);
-        $("#total").text(total);
+        $("#deliveryCost").text(formatMoney(price.DeliveryCost));
+        $("#productCost").text(formatMoney(price.ProductCost));
+        $("#total").text(formatMoney(total));
     }
 }
 
@@ -42,7 +45,7 @@ function updateItem(cartLine: JQuery, productId: string, cart: ICart) {
     //if (productData.length === 0) {        
     //    $(cartLine).remove();
     //} else {
-        $(cartLine).children(".count").text(productData[0].Count);
+    $(cartLine).children(".count").text(productData[0].Count);
     //}
 }
 

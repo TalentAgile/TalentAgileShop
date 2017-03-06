@@ -20,7 +20,7 @@ namespace TalentAgileShop.UITests
 
         [TestCleanup]
         public void TestCleanup()
-        {                         
+        {
             GivenTheSite.TakeScreenshotIfCurrentTestFailed();
             GivenTheSite.DisposeBrowser();
             GivenTheSite = null;
@@ -61,7 +61,7 @@ namespace TalentAgileShop.UITests
                 .ThenIShouldSeeThisLog(logCount: 1, log: "Added to cart!");
         }
 
-        [TestMethod]
+        [TestMethod]      
         public void show_two_logs_when_I_add_a_product_to_the_cart_twice()
         {
             GivenTheSite
@@ -72,7 +72,10 @@ namespace TalentAgileShop.UITests
         }
 
 
+
+
         [TestMethod]
+        [Ignore]
         public void show_a_price_of_zero_for_an_empty_cart()
         {
             GivenTheSite
@@ -81,7 +84,8 @@ namespace TalentAgileShop.UITests
                 .ThenTheDeliveryCostIs(0);
         }
 
-        [TestMethod]      
+        [TestMethod]
+        [Ignore]
         public void let_me_switch_to_the_thumbnail_view_and_back_to_list_view()
         {
             GivenTheSite
@@ -94,14 +98,14 @@ namespace TalentAgileShop.UITests
         [Ignore]
         public void show_the_right_price_for_a_M_tshirt()
         {
-            Assert.Inconclusive();
+            throw new NotImplementedException();
         }
 
         [TestMethod]
         [Ignore]
         public void show_the_right_price_for_a_M_tshirt_with_a_FREESMALL_discount()
         {
-            Assert.Inconclusive();
+            throw new NotImplementedException();
         }
     }
 }
