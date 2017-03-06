@@ -41,7 +41,8 @@ namespace TalentAgileShop.UITests
             {
                 string fileNameBase =
                     $"error_{_context.TestName}_{DateTime.Now:yyyyMMdd_HHmmss}";
-                var resultsDirectory = Path.GetTempPath();
+                var resultsDirectory = _context.TestResultsDirectory;
+
                 //if (!Directory.Exists(resultsDirectory))
                 //    Directory.CreateDirectory(resultsDirectory);
 
