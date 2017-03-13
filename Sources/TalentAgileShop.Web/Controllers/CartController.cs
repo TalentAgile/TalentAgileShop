@@ -27,13 +27,15 @@ namespace TalentAgileShop.Web.Controllers
 
         private string GetCookieId()
         {
-            var cookie = Request.Headers.GetCookies("cart-id").FirstOrDefault();
+            var cookie =
+                Request.Headers.GetCookies().SelectMany(c => c.Cookies).FirstOrDefault(c => c.Name == "cart-id");
+           
 
             if (cookie == null)
             {
                 return Guid.NewGuid().ToString();
             }
-            var value = cookie.Cookies.FirstOrDefault()?.Value;
+            var value = cookie.Value;
 
             return value;
         }
