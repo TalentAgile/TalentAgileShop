@@ -4,7 +4,7 @@
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseName>TalentAgileStop.Database</TargetDatabaseName>
     <DeployScriptFileName>TalentAgileStop.Database.sql</DeployScriptFileName>
-    <BlockOnPossibleDataLoss>True</BlockOnPossibleDataLoss>
+    <BlockOnPossibleDataLoss>False</BlockOnPossibleDataLoss>
     <IncludeTransactionalScripts>True</IncludeTransactionalScripts>
     <ExcludeApplicationRoles>True</ExcludeApplicationRoles>
     <ExcludeAssemblies>True</ExcludeAssemblies>
