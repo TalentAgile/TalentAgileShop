@@ -29,5 +29,6 @@
     <ExcludeSymmetricKeys>True</ExcludeSymmetricKeys>
     <ExcludeUsers>True</ExcludeUsers>
     <ProfileVersionNumber>1</ProfileVersionNumber>
+    <DropObjectsNotInSource>True</DropObjectsNotInSource>
   </PropertyGroup>
 </Project>
