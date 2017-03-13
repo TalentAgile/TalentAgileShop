@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{046C653A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cart", "Cart", "{5F8FD3CB-0F7E-446E-A95E-1A6EA4911CC5}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TalentAgileStop.Database", "TalentAgileStop.Database\TalentAgileStop.Database.sqlproj", "{89CE0CE7-0AA7-4976-885A-480DC32BBC8A}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TalentAgileShop.Database", "TalentAgileShop.Database\TalentAgileShop.Database.sqlproj", "{89CE0CE7-0AA7-4976-885A-480DC32BBC8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
