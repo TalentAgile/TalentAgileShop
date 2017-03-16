@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace TalentAgileShop.Model
@@ -19,17 +17,5 @@ namespace TalentAgileShop.Model
         {
             Products.AddRange(cart.Products.Select(p => new CartProduct() {Count = p.Count, Id = p.Id}));
         }
-    }
-
-    [Table("CartItems")]
-    public class DBCartItem
-    {
-        [Column("Cart_Id"), Key()]
-        public string CartId { get; set; }
-        [Key()]
-        public Product Product { get; set; }
-
-        public int Count { get; set; }
-
     }
 }

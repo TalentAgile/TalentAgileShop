@@ -75,7 +75,7 @@ namespace TalentAgileShop.Web.App_Start
             kernel.Bind<FeatureSet>()
                 .ToConstant(featureSet);
 
-#if false
+#if true
             kernel
             .Bind<ICartRepository>()
             .To<InMemoryCartRepository>()
@@ -93,7 +93,7 @@ namespace TalentAgileShop.Web.App_Start
             .Bind<IDataContext>()
             .To<TalentAgileShopDataContext>()
             .InRequestScope();
-#if true
+#if false
              kernel
             .Bind<ICartRepository>()
             .To<DbCartRepository>()

@@ -67,6 +67,5 @@
     <Build Include="dbo\Tables\Countries.sql" />
     <Build Include="dbo\Tables\ProductImages.sql" />
     <Build Include="dbo\Tables\Products.sql" />
-    <Build Include="dbo\Tables\CartItems.sql" />
   </ItemGroup>
 </Project>

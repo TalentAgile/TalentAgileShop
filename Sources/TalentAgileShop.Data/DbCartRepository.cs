@@ -5,6 +5,7 @@ using System.Data.Entity;
 
 namespace TalentAgileShop.Data
 {
+#if false
     public class DbCartRepository : ICartRepository
     {
         private readonly IDataContext _context;
@@ -88,4 +89,5 @@ namespace TalentAgileShop.Data
             return Get(cartId);
         }
     }
+#endif
 }

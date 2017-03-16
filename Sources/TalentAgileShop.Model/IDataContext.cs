@@ -9,9 +9,9 @@ namespace TalentAgileShop.Model
         DbSet<Product> Products { get; set; }
 
         DbSet<ProductImage> ProductImages { get; set; }
-
+#if false
         DbSet<DBCartItem> CartItems { get; set; }
-
+#endif
         int SaveChanges();
     }
 }

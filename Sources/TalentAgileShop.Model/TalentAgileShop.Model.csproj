@@ -54,6 +54,7 @@
     <Compile Include="CartProduct.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Country.cs" />
+    <Compile Include="DBCartItem.cs" />
     <Compile Include="Feature.cs" />
     <Compile Include="ICartPriceCalculator.cs" />
     <Compile Include="ICartRepository.cs" />
