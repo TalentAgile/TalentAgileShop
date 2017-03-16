@@ -4,7 +4,7 @@ using TalentAgileShop.Model;
 
 namespace TalentAgileShop.Cart
 {
-    public class CartPriceCalculator: ICartPriceCalculator
+    public class CartPriceCalculator : ICartPriceCalculator
     {
 
         /// <summary>
@@ -19,15 +19,18 @@ namespace TalentAgileShop.Cart
         /// </returns>
         public CartPrice ComputePrice(List<CartItem> items, string discountCode)
         {
-          
-            // Write cart price algorithm here
-            return new CartPrice()
+
+            var result = new CartPrice
             {
-                DeliveryCost = 0,
-                ProductCost = 0
+                ProductCost = 0,
+                DeliveryCost = 0
             };
+
+            return result;
 
         }
 
     }
+
+
 }

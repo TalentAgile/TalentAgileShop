@@ -244,3 +244,7 @@ ModelManifest.xml
 /Sources/TalentAgileShop.Web/Scripts/site/*.js.map
 
 /Sources/SpecflowPlugins
+
+
+#SQL Database
+*.jfm

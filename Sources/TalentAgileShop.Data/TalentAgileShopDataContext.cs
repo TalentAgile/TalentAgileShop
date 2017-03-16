@@ -21,7 +21,10 @@ namespace TalentAgileShop.Data
 
         public DbSet<ProductImage> ProductImages { get; set; }
 
-
+#if false
+        public DbSet<DBCartItem> CartItems { get; set; }
+#endif
+ 
     }
 }
 

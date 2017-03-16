@@ -24,7 +24,7 @@ namespace TalentAgileShop.Cart.Tests
 
         // 1. remove the Ignore attribute and write the algorithm 
         [Test]
-        [Ignore("")]
+
         public void return_zero_when_the_cart_is_empty()
         {
             var cartItems = new List<CartItem>();

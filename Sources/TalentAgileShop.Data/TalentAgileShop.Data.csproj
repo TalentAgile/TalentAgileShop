@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbCartRepository.cs" />
     <Compile Include="Migrations\201612231103442_InitialCreate.cs" />
     <Compile Include="Migrations\201612231103442_InitialCreate.Designer.cs">
       <DependentUpon>201612231103442_InitialCreate.cs</DependentUpon>

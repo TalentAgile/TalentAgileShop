@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseName>TalentAgileStop.Database</TargetDatabaseName>
+    <DeployScriptFileName>TalentAgileStop.Database.sql</DeployScriptFileName>
+    <BlockOnPossibleDataLoss>False</BlockOnPossibleDataLoss>
+    <IncludeTransactionalScripts>True</IncludeTransactionalScripts>
+    <ExcludeApplicationRoles>True</ExcludeApplicationRoles>
+    <ExcludeAssemblies>True</ExcludeAssemblies>
+    <ExcludeAsymmetricKeys>True</ExcludeAsymmetricKeys>
+    <ExcludeAudits>True</ExcludeAudits>
+    <ExcludeBrokerPriorities>True</ExcludeBrokerPriorities>
+    <ExcludeCertificates>True</ExcludeCertificates>
+    <ExcludeClrUserDefinedTypes>False</ExcludeClrUserDefinedTypes>
+    <ExcludeContracts>True</ExcludeContracts>
+    <ExcludeCredentials>True</ExcludeCredentials>
+    <ExcludeCryptographicProviders>True</ExcludeCryptographicProviders>
+    <ExcludeDatabaseAuditSpecifications>True</ExcludeDatabaseAuditSpecifications>
+    <ExcludeDatabaseRoles>True</ExcludeDatabaseRoles>
+    <ExcludeDatabaseScopedCredentials>True</ExcludeDatabaseScopedCredentials>
+    <ExcludeDatabaseTriggers>True</ExcludeDatabaseTriggers>
+    <ExcludeLogins>True</ExcludeLogins>
+    <ExcludeSecurityPolicies>True</ExcludeSecurityPolicies>
+    <ExcludeServerRoleMembership>True</ExcludeServerRoleMembership>
+    <ExcludeServerRoles>True</ExcludeServerRoles>
+    <ExcludeServerTriggers>True</ExcludeServerTriggers>
+    <ExcludeSignatures>True</ExcludeSignatures>
+    <ExcludeSymmetricKeys>True</ExcludeSymmetricKeys>
+    <ExcludeUsers>True</ExcludeUsers>
+    <ProfileVersionNumber>1</ProfileVersionNumber>
+    <DropObjectsNotInSource>True</DropObjectsNotInSource>
+  </PropertyGroup>
+</Project>
