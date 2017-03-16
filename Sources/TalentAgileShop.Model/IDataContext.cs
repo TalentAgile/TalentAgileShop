@@ -10,5 +10,8 @@ namespace TalentAgileShop.Model
 
         DbSet<ProductImage> ProductImages { get; set; }
 
+        DbSet<DBCartItem> CartItems { get; set; }
+
+        int SaveChanges();
     }
 }
