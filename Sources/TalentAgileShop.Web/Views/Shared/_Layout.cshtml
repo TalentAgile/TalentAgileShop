@@ -1,4 +1,12 @@
-﻿
+﻿@using System.Reflection
+@{
+  
+    var attribute = (AssemblyFileVersionAttribute)typeof(MvcApplication).Assembly
+        .GetCustomAttributes(typeof(AssemblyFileVersionAttribute), true)
+        .FirstOrDefault();
+
+    var version = attribute?.Version;
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,6 +58,9 @@
     </div>
     @RenderBody()
 </div>
+<footer style="text-align: right; margin-right: 30px">
+    Version @version
+</footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
