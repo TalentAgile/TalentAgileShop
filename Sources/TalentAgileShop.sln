@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Local.testsettings = Local.testsettings
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Performance Tests", "Performance Tests", "{5A50E573-9DA6-4675-9684-4D1AC52EB925}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,5 +76,6 @@ Global
 		{05F0EA39-0549-4356-A9C3-74D3DA6C6FE9} = {5F8FD3CB-0F7E-446E-A95E-1A6EA4911CC5}
 		{CDCC768D-A365-4C64-9FA0-EAA5055CDCB2} = {121813CE-6ACE-4899-BA4A-EBB73515011E}
 		{9C2A524C-CF1A-4B55-BDA0-03C2881C1558} = {42C06928-4AD7-43F7-9B59-640C7F279E67}
+		{6F363213-9C3A-4909-9A92-0022807ED77B} = {5A50E573-9DA6-4675-9684-4D1AC52EB925}
 	EndGlobalSection
 EndGlobal
