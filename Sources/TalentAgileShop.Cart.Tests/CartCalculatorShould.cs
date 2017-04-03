@@ -40,7 +40,7 @@ namespace TalentAgileShop.Cart.Tests
         // 2. remove the Ignore attribute and write the algorithm 
         [Test]
         [Ignore("")]
-        //[TestCase(100, 1, 100)]
+        [TestCase(100, 1, 100)]
         //[TestCase(100, 2, 200)]
         //[TestCase(100, 3, 300)]
         //[TestCase(100, 4, 400)]
@@ -59,7 +59,7 @@ namespace TalentAgileShop.Cart.Tests
 
         [Test]
         [Ignore("")]
-        //[TestCase(ProductSize.Small, 1, 5)]
+        [TestCase(ProductSize.Small, 1, 5)]
         //[TestCase(ProductSize.Medium, 1, 5)]
         //[TestCase(ProductSize.Large, 1, 10)]
         //[TestCase(ProductSize.ExtraLarge, 1, 20)]
