@@ -44,13 +44,7 @@ namespace TalentAgileShop.UITests
                 .ThenIShouldSeeTheProductList();
         }
 
-        [TestMethod]
-        public void show_me_the_category_filter_on_the_catalog_page()
-        {
-            GivenTheSite
-                .WhenINavigateToTheCatalogPage()
-                .ThenIShouldSeeTheCategoryFilters();
-        }
+     
 
         [TestMethod]
         public void show_one_log_when_I_add_a_product_to_the_cart()
@@ -70,6 +64,16 @@ namespace TalentAgileShop.UITests
                 .WhenIClickOnAddToCartButton()
                 .ThenIShouldSeeThisLog(logCount: 2, log: "Added to cart!");
         }
+
+        [TestMethod]
+        [Ignore]
+        public void show_me_the_category_filter_on_the_catalog_page()
+        {
+            GivenTheSite
+                .WhenINavigateToTheCatalogPage()
+                .ThenIShouldSeeTheCategoryFilters();
+        }
+
 
         [TestMethod]
         [Ignore]
