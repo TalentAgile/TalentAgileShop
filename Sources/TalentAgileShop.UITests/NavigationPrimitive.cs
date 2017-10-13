@@ -71,32 +71,25 @@ namespace TalentAgileShop.UITests
 
         private IWebDriver CreateWebDriver()
         {
-            var driverName = GetTestProperty("webDriver");
+            var headless = GetTestProperty("headless");
 
 
-            if (string.Compare(driverName, "chrome", StringComparison.InvariantCultureIgnoreCase) == 0)
+            var options = new ChromeOptions();
+            options.AddArgument("-incognito");
+            // options.AddArgument("--start-maximized");
+            // var location = GetTestProperty("chromeDriverLocation");
+
+            if (string.Compare(headless, "yes", StringComparison.InvariantCultureIgnoreCase) == 0)
             {
-                var options = new ChromeOptions();
-                options.AddArgument("-incognito ");
-                options.AddArgument("--start-maximized");
-                var location = GetTestProperty("chromeDriverLocation");
-                var webDriver = new ChromeDriver(location, options);
-                return webDriver;
+                options.AddArgument("-headless");
             }
 
-            if (string.Compare(driverName, "phantomJs", StringComparison.InvariantCultureIgnoreCase) == 0)
-            {
-                var driver = new PhantomJSDriver();
 
-                driver.Manage().Window.Size = new Size(1200, 1000);
-                return driver;
-            }
+            var webDriver = new ChromeDriver(options);
+            webDriver.Manage().Window.Size = new Size(1200, 1000);
+            return webDriver;
 
-            if (string.IsNullOrEmpty(driverName))
-            {
-                throw new InvalidOperationException("Driver name missing: do you have selected a test setting file?");
-            }
-            throw new InvalidOperationException($"Invalid driver name: {driverName}");
+
         }
 
 
