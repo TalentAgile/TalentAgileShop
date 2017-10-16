@@ -72,24 +72,15 @@ namespace TalentAgileShop.UITests
         private IWebDriver CreateWebDriver()
         {
             var headless = GetTestProperty("headless");
-
-
             var options = new ChromeOptions();
-            options.AddArgument("-incognito");
-            // options.AddArgument("--start-maximized");
-            // var location = GetTestProperty("chromeDriverLocation");
-
-            if (string.Compare(headless, "yes", StringComparison.InvariantCultureIgnoreCase) == 0)
+            options.AddArgument("-incognito");        
+            if (string.Compare(headless, "true", StringComparison.InvariantCultureIgnoreCase) == 0)
             {
                 options.AddArgument("-headless");
             }
-
-
             var webDriver = new ChromeDriver(options);
             webDriver.Manage().Window.Size = new Size(1200, 1000);
-            return webDriver;
-
-
+            return webDriver;      
         }
 
 
