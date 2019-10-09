@@ -27,7 +27,7 @@ namespace TalentAgileShop.Cart.Tests.Features
 #line 1 "Cart.feature"
 #line hidden
         
-        [NUnit.Framework.TestFixtureSetUpAttribute()]
+        [NUnit.Framework.OneTimeSetUp()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -36,7 +36,7 @@ namespace TalentAgileShop.Cart.Tests.Features
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.TestFixtureTearDownAttribute()]
+        [NUnit.Framework.OneTimeTearDown()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
