@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentAgileShop.Web", "TalentAgileShop.Web\TalentAgileShop.Web.csproj", "{02D1C3D6-5CA1-42AE-8849-8224FED92490}"
 EndProject
@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Performance Tests", "Performance Tests", "{5A50E573-9DA6-4675-9684-4D1AC52EB925}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TalentAgileShop.Database", "TalentAgileShop.Database\TalentAgileShop.Database.sqlproj", "{0EB9AD3A-27FD-4347-8394-D89CBBF7EA3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +68,12 @@ Global
 		{6F363213-9C3A-4909-9A92-0022807ED77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F363213-9C3A-4909-9A92-0022807ED77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F363213-9C3A-4909-9A92-0022807ED77B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB9AD3A-27FD-4347-8394-D89CBBF7EA3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB9AD3A-27FD-4347-8394-D89CBBF7EA3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB9AD3A-27FD-4347-8394-D89CBBF7EA3F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0EB9AD3A-27FD-4347-8394-D89CBBF7EA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB9AD3A-27FD-4347-8394-D89CBBF7EA3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB9AD3A-27FD-4347-8394-D89CBBF7EA3F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,5 +85,6 @@ Global
 		{CDCC768D-A365-4C64-9FA0-EAA5055CDCB2} = {121813CE-6ACE-4899-BA4A-EBB73515011E}
 		{9C2A524C-CF1A-4B55-BDA0-03C2881C1558} = {42C06928-4AD7-43F7-9B59-640C7F279E67}
 		{6F363213-9C3A-4909-9A92-0022807ED77B} = {5A50E573-9DA6-4675-9684-4D1AC52EB925}
+		{0EB9AD3A-27FD-4347-8394-D89CBBF7EA3F} = {046C653A-559B-47A6-9B4F-3ADC620F2541}
 	EndGlobalSection
 EndGlobal
